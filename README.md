@@ -1,127 +1,49 @@
-# **``Heading``**
-## ``Day-0``
-* **Innaugrated** a session
-* How to set up global username and email-id
-* To create new repositry and to push an existing repo.
+# Secure Cloud Portfolio: Global Static Web Hosting on AWS
 
-## ``Day-01``
-### **HTML Introduction**
-* Syntax.
-* Headings.
-* Attributes.
-* images.
-* ordered and unordered list.
-* links.
-* Assignment to make a **"Wikipedia"** page.
+A production-ready, highly available, and secure static website hosting architecture built entirely on AWS. This project leverages Amazon S3 for cost-effective object storage and AWS CloudFront as a global Content Delivery Network (CDN) to serve content with low latency and enforced HTTPS encryption.
 
-## ``Day-02``
-* _tags_ (bold,break,italics,code,bloquotee,em etc)
-* _button_.
-* _iframe_.
-* _id's and classes_.
-* _table_.
+## 🔗 Live Demo
+Check out the live deployment here: [👉 https://d28ahkwiur4gxp.cloudfront.net/project-1.html](https://d28ahkwiur4gxp.cloudfront.net/project-1.html)
 
-## ``Day-03``
-### **html form**
-* _input_ tag.
-* _label_ tag.
-* _submit_ button.
-* _audio_ tag.
-* _vedio_ tag.
+---
 
-## ``Day-04``
-### **QA session**
-* _Gitlab_ structure was thought.
-* _meta_ tag was explained.
-* Told us to _install_ some of the _extensions_.
-* gave assignment to create a skeleton of our portfolio page.
+## Architecture Overview
 
-## ``Day-05``
-### **Session on CSS**
-* We learnt 
-* inline, internal, external _CSS_
-* how to _reference_ css
-* _color_, _font styles_, _font families_,
-* _margin_ and its types and usage, 
-* _padding_ its usage,
-* _border_ its types (border radius, color,)
-* how to _reference_ html _tags_
-* We did a small **"Pricing card"**
-* We continued doing the **"Portfolio"** page
+The infrastructure relies on modern cloud security best practices by keeping the origin data completely private from the public internet, forcing all client traffic through edge caches.
 
-## ``Day-06``
-### **Continued making a portfolio page**
-* We did second section of the given portfolio page.
-* We learnt CSS positioning (_relative, absolute_).
-* learnt  _z-index_.
-* We learnt about _flex_(used to align the elements).
-* We learnt some _shortcuts_ while using elements.
-* Learnt _view port height (vh)_.
+* **Amazon S3:** Holds the static website source assets (`html`, `css`, `js`). Public access is completely blocked.
+* **AWS CloudFront:** Serves as the Content Delivery Network (CDN) caching content at edge locations worldwide to drastically lower response times.
+* **Origin Access Control (OAC):** Secures the S3 origin by restricting bucket read permissions (`s3:GetObject`) exclusively to the CloudFront service principal.
+* **Security & Optimization:** Automated redirection of HTTP requests to secure HTTPS using default CloudFront SSL certificates.
 
-## ``Day-07``
-### **Continued making a portfolio page**
-* We learnt flex and its properties.
-* We learnt grid and its properties.
-* Gave us an assignment to make a testimonial   page using grid.
+---
 
-## ``Day-08``
-### **Session on Javascript**
-* Learnt **Datatypes**.
-* Learnt Strings 
-* (_typeof_, _indexOf_, _lastIndexOf_, _slice_, _substring_, _substr_, _length_)
-* Learnt **Arrays**
-* (_push_, _pop_, _indexOf_, _lastIndexOf_, _sort_, _reverse_, _shift_, _unshift_, _splice_)
+## 🛠️ AWS Implementation Steps
 
-## ``Day-09``
-### **Continued session on Javascript**
-* We wrote an array program of shoppingList and used functions like _push()_,_pop()_,_shift()_,_unshift()_,_parInt()_.
-* Learnt **_switch case_** to use
-* We learnt **_conditional statements_**.
-* We learnt **_functions_**.
-* Learnt to use **_objects_**
-* We used _functions_ inside the objects.
-* tried _multiple functions_ to use inside the objects.
+### 1. Storage Configuration (Amazon S3)
+* Created a private S3 bucket named `[Your S3 Bucket Name]`.
+* Kept **Block Public Access** turned **ON** to prevent public data exposure.
+* Uploaded all frontend static assets directly to the root level of the bucket.
 
-## ``Day-10``
-### **Continued session on Javascript**
-* Learnt to _**manipulate**_ the html tags using **getElementBy**(Id,ClassName,attribute) 
-  and using **quereySelecter()**.
-* learnt **Array.from()** : used to convert into array.
-* Learnt **setInterval** and **clearInterval** function.
-* We wrote a program to change the background color using setInterval and clearInterval functions.
-* We learnt **addEventListener()** to use.
-* We learnt to write  **functions**.
-* Gave an assignment "To change the text color on clicking the button along with displaying the color name".
+### 2. Content Delivery Setup (AWS CloudFront)
+* Provisioned a CloudFront Distribution pointing to the S3 bucket domain as the origin.
+* Configured **Origin Access Control (OAC)** to create a trusted relationship between S3 and CloudFront.
+* Updated the **S3 Bucket Policy** with the automatically generated IAM JSON policy to grant `s3:GetObject` access strictly to the CloudFront distribution identifier.
+* Set the **Default Root Object** to `project-1.html`.
+* Configured the **Viewer Protocol Policy** to automatically redirect `HTTP` requests to `HTTPS`.
 
-## ``Day-11``
-### **Tik Tak Toe Game**
-* We learnt **some** and **every** functions.
-* We did tik tak toe game using "html" , "css" , "js".
-* Gave a project to do "**Stop Watch**".
+---
 
-## ``Day-12``
-### **JS API**
-* We used fetch API.
-* We learnt few functions (map, filter,find,reduce,findIndex).
+## 📊 Key Learning Outcomes & Technical Skills
 
-## ``Day-13``
-### **React Js**
-* We started with installation.
-* We installed node js.
-* We installed npm globally.
-* We created React app file
-* We accssed that to our current working directory.
-* We started the server.
+* **Cloud Security:** Implementing the principle of least privilege via bucket policies and disabling direct public access to backend storage.
+* **Content Delivery & Edge Caching:** Understanding CDN behaviors, TTLs, caching optimizations, and utilizing cache invalidations (`/*`) to force immediate global updates.
+* **Troubleshooting Core AWS Error Codes:** Debugging complex permissions issues such as AWS `403 Forbidden (AccessDenied)` errors by resolving asset folder paths and misaligned distribution behavior routing.
 
-## ``Day-14``
-### **Continued with react**
-* We learnt to import and export the react file.
-* We learnt about props.
-* We tried doing card component of Britany Chiang using React
+---
 
-## ``Day-15 ``
-### **Continued with react**
-* We continued doing BC portfolio using react.
-* We learnt Useeffect hook.
-* We learnt the use of fetch method.
-* We learnt to use icons.
+## 🚀 Technologies Used
+* **Cloud Platform:** Amazon Web Services (AWS)
+* **AWS Services:** Amazon S3, AWS CloudFront (OAC), IAM
+* **Frontend:** HTML5, CSS3, JavaScript
+* **Security protocols:** HTTPS, TLS/SSL
