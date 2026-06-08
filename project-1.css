@@ -1,0 +1,277 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-margin: smooth;
+}
+.chClr{
+    float:right;
+    text-decoration: none;
+}
+.row{
+    display: flex;
+}
+.column{
+    flex: 33%; 
+}
+
+  #animContainer {
+    width: 100px;
+    height: 300px;    
+    
+  }
+
+body{
+    background-color: black;
+    color:rgb(173, 170, 170);
+    
+}
+/* body h1{
+    color: black;
+}
+body p{
+    color: rgb(109, 103, 103);
+} */
+.nav-bar{
+   position: relative;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   overflow: hidden;
+   margin: 40px;  
+}
+.nav-bar h1{
+    font-family: 'Tangerine', serif;
+    font-size: 48px;
+    text-shadow: 4px 4px 4px #aaa;
+}
+h1{
+    color: rgb(224, 248, 252);
+    
+}
+.intro h1{
+    margin-top: 40px;
+    color: rgb(239, 246, 248);
+
+}
+.intro {
+    padding: 10px;
+    margin-left: 15%;
+    display: grid;
+}
+.column p{
+    line-height: 30px;
+    font-size: larger;
+    margin-top: 30px;
+}
+.intro h1{
+    font-size: 50px;
+}
+.button{
+    padding: 10px;
+    width: 120px;
+    margin-top: 10px;
+    margin: 10px;
+    background-color: rgb(204, 0, 255);
+    color: white;
+    border-radius: 8px;
+    border: 1px solid white;
+}
+.socmedia-icon img{
+    margin-top: 40px;
+    border-radius: 100%;
+}
+.socmedia-icon ul{
+    margin-left: 40%;
+}
+.socmedia-icon li {
+    display: inline;
+}
+.Skills{
+    margin-top: 140px;
+    text-align: center;
+}
+.Skills p{
+    line-height: 30px;
+    font-size: larger;
+   
+}
+.Skills h1{
+    padding: 10px;
+    text-decoration: underline;
+}
+
+.card-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(3,1fr);
+    padding: 70px;
+    margin-left: 100px;
+}
+.card{
+    display: grid;
+    border: 2px solid grey;
+    box-shadow: 5px 10px 10px 5px rgb(95, 93, 93) ;
+    width: 80%;
+    padding: 05px;
+    margin: 10px;
+    border-radius: 5px; 
+}
+.card p{
+    text-align: start;
+    margin-left: 25px;
+}
+.cardmg-1{
+    margin-left: 40px;
+}
+.cardmg-2{
+    margin-right: 40px;
+}
+.project{
+    margin-top: 120px;
+    text-align: center;
+}
+.project h1{
+    text-align: center;
+   
+}
+.proflex{
+    display: flex;
+    grid-column-gap: 10px;
+}
+.proGrid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+    padding: 80px;
+    grid-row-gap: 20px;
+   
+}
+.pro h1{
+    text-align: center;
+}
+.project h1{
+    text-decoration: underline;
+}
+.pro{
+    margin-left: 20%;
+    padding: 30px;
+    display: grid;
+    border: 2px solid grey;
+    width:55%;
+    box-shadow: 5px 10px 10px 5px rgb(95, 93, 93) ;
+}
+.pro-1{
+    border-radius: 8px;
+    margin: 10px;
+    margin-left: 20%;
+    padding: 10px;
+}
+.pro-2{
+    border-radius: 8px;
+    margin: 10px;
+    margin-left: 20%;
+    padding: 10px;
+}
+.pro-3{
+    border-radius: 8px;
+    margin-left: 20%;
+    padding: 10px;
+}
+.pro-4{
+   border-radius: 8px;
+    margin-left: 20%;
+    padding: 10px;
+}
+.testimonial{
+    margin-top: 150px;
+}
+.testimonial h1{
+    text-align: center;
+    text-decoration: underline;
+}
+.testi{
+   display: grid;
+   grid-template-columns: repeat(4,1fr);
+   grid-template-rows: repeat(1,1fr);display: grid;
+   padding: 100px;
+   
+}
+.client{
+    display: grid;
+    border: 2px solid grey;
+    box-shadow: 5px 10px 10px 5px rgb(95, 93, 93) ;
+    width: 80%;
+    height: 120%;
+    border-radius: 10px;
+}
+.testi h4{
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+}
+.testi img{
+    border-radius: 100px;
+    border: 3px solid palevioletred;
+    margin: 10px;
+}
+.testi p{
+    line-height: 30px;
+    font-size: larger;
+    text-align: center;
+    
+}
+.checked {
+    text-align: center;
+    color: orangered;
+  }
+.check{
+    color: grey;
+}
+.hire{
+    margin-top: 10%;
+    font-size: larger;
+}
+.hireimg{
+    border-radius: 1000%;
+}
+.hire h1{
+    margin-left: 500px;
+    padding: 20px;
+    text-decoration: underline;
+}
+.hire-form{
+    border: 2px solid grey;
+    box-shadow: 5px 10px 10px 5px rgb(95, 93, 93) ;
+    border-radius: 10px;
+    width: 400px;
+    height: 400px;
+    margin-left: 500px;
+    padding: 30px;
+}
+.hire-form label{
+    line-height: 30px;
+}
+.hire-form input{
+    width: 80%;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.type-4{
+    height: 500px;
+    width: 300px;
+}
+  .type-4{
+    padding: 40px;
+}
+.hire-form button{
+    align-items: center;
+    margin: 20px;
+    margin-left: 30%;
+}
+input :placeholder{
+    font-weight: bold;
+    font-size: larger;
+}
